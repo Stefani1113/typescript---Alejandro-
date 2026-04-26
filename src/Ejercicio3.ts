@@ -12,15 +12,13 @@ type Push = {
 
 type Notificacion = SMS | Email | Push
 
-function enviarNotificacion (notificacion: Notificacion []){
-    return notificacion.filter((notificacion: Notificacion) =>{
-
-        if (enviarNotificacion === Notificacion.SMS) {
+function enviarNotificacion (notificacion: Notificacion){
+        if ("numero" in notificacion) {
             console.log("Este es un SMS")
-        } else if (enviarNotificacion === Notification.Email){
+        } else if ("receptor" in notificacion){
             console.log("Este es un Email")
         } else {
             console.log("Este es un Push")
         }
-    })
-}
+    }
+
